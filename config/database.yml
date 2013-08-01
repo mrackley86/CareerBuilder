@@ -1,0 +1,26 @@
+common: &common
+  adapter: postgresql
+  username: pgtest
+  password: pgtest 
+  host: localhost
+
+development:
+  <<: *common
+  database: rack_development
+
+test:
+  <<: *common
+  database: rack_test
+  min_messages: WARNING
+
+
+
+staging:
+  <<: *common
+  database: rack_test
+  min_messages: WARNING
+
+production:
+  <<: *common
+  database: rack_test
+  min_messages: WARNING
